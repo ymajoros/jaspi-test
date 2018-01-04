@@ -1,0 +1,3 @@
+<jboss-web>
+    <security-domain>zoomit</security-domain>
+</jboss-web>

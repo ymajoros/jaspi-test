@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application-bnd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://websphere.ibm.com/xml/ns/javaee http://websphere.ibm.com/xml/ns/javaee/ibm-application-bnd_1_1.xsd"
+                 xmlns="http://websphere.ibm.com/xml/ns/javaee"
+                 version="1.1">
+
+    <security-role name="pink">
+        <group name="pink" access-id="group:defaultWIMFileBasedRealm/cn=pink,o=defaultWIMFileBasedRealm" />
+    </security-role>
+    <!--<jaspi-ref provider-name="zoomit-auth-provider" use-jaspi="yes" />-->
+
+</application-bnd>

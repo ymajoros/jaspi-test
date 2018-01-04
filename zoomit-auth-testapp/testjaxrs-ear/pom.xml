@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>testjaxrs</artifactId>
+        <groupId>test</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>testjaxrs-ear</artifactId>
+    <packaging>ear</packaging>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+                    <modules>
+                        <webModule>
+                            <groupId>test</groupId>
+                            <artifactId>testjaxrs-war</artifactId>
+                            <contextRoot>/testjaxrs</contextRoot>
+                        </webModule>
+                    </modules>
+                    <earSourceDirectory>src/main/resources</earSourceDirectory>
+                    <version>7</version>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.cargo</groupId>
+                <artifactId>cargo-maven2-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>test</groupId>
+            <artifactId>testjaxrs-war</artifactId>
+            <type>war</type>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+</project>
